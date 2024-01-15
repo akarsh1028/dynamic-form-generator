@@ -1,0 +1,61 @@
+.elementsbar {
+  position: fixed;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #3e4652;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.closeIcon {
+  cursor: pointer;
+}
+
+.formElements {
+  display: flex;
+  align-items: center;
+  background-color: #545f6f;
+  color: #ffffff;
+  gap: 14px;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.formElements h6 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.icons {
+  background-color: #37404a;
+  padding: 20px;
+}
+
+.addElement {
+  color: #fff;
+  border-radius: 0 100px 100px 0;
+  padding: 11px 12px 13px 16px;
+  font-size: 13px;
+  background: #3e4652;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  top: 200px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.addElement p {
+  width: 70px;
+  margin: 0;
+  text-align: center;
+}

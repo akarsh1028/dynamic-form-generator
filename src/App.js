@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css'
+import DynamicForm from './components/DynamicForm';
+import ElementsBar from './components/ElementsBar';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className={styles.header}>
+        <h1>Dynamic Form Generator</h1>
       </header>
-    </div>
+      <main className={styles.mainContent}>
+        <ElementsBar/> 
+        <DynamicForm />
+      </main>
+    </>
   );
 }
 
 export default App;
+
