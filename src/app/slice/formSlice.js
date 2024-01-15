@@ -23,8 +23,8 @@ export const formSlice = createSlice({
       let obj = action.payload;
       state.value.inputs.push(obj);
     },
-    deleteElement: (state) => {
-      state.value -= 1
+    deleteElement: (state, action) => {
+      state.value.inputs.splice(action.payload,1);
     },
     changeHeading: (state) => {
       console.log(state.value.heading)

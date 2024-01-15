@@ -10,18 +10,37 @@
   cursor: pointer;
 }
 
-.star {
+.checkradio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
+.checkradio label {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(44, 51, 69);
+}
+
+.checkradio input {
+  width: 20px;
+  height: 20px;
+}
+
+.optionbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .activeform {
   box-shadow: 0 0 0 2px #0293e2;
 }
 
-.forminput label {
+.labelheading {
   font-size: 18px;
   font-weight: 500;
-  color: rgb(69, 68, 68);
+  color: #2c3345;
 }
 
 .required::after {

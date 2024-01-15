@@ -1,8 +1,8 @@
-import { Settings, Star, Trash } from 'lucide-react'
+import { Edit, Trash } from 'lucide-react'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { changeHeading } from '../../app/slice/formSlice'
 import styles from '../styles/forminput.module.css'
+import { deleteElement } from '../../app/slice/formSlice'
 
 const FormInput = ({ data, active, setActive, index }) => {
 
@@ -10,7 +10,7 @@ const FormInput = ({ data, active, setActive, index }) => {
 
   return (
     <div className={`${styles.forminput} ${active && styles.activeform}`} onClick={() => setActive(index)}>
-      <label className={data.required ? styles.required : ''} htmlFor={`input-${index}`}>{data.label}</label>
+      <label className={`${styles.labelheading} ${data.required ? styles.required : ''}`} htmlFor={`input-${index}`}>{data.label}</label>
       {data.type === 'textarea' ? 
         <textarea readOnly id={`input-${index}`} placeholder={data.placeholder}></textarea>
       :
@@ -21,11 +21,31 @@ const FormInput = ({ data, active, setActive, index }) => {
           ))}
         </select>
       :
+      data.type === 'checkbox' ?
+        <div className={styles.optionbox}>
+          {data.option.map((item, i) => (
+            <div key={item} className={styles.checkradio}>
+              <input readOnly id={`${data.type+i}-${index}`} type={data.type} />
+              <label htmlFor={`${data.type+i}-${index}`}>{item}</label>
+            </div>
+          ))}
+        </div>
+      :
+      data.type === 'radio' ?
+        <div className={styles.optionbox}>
+          {data.option.map((item, i) => (
+            <div key={item} className={styles.checkradio}>
+              <input name={`${data.label}-${index}`} readOnly id={`${data.type+i}-${index}`} type={data.type} />
+              <label htmlFor={`${data.type+i}-${index}`}>{item}</label>
+            </div>
+          ))}
+        </div>
+      :
         <input readOnly id={`input-${index}`} type={data.type} placeholder={data.placeholder} />
       }
       {active && <div className={styles.options}>
-        <button className={`${styles.setting} ${styles.iconbutton}`} onClick={() => dispatch(changeHeading())}><Settings /></button>
-        <button className={`${styles.trash} ${styles.iconbutton}`}><Trash/></button>
+        <button className={`${styles.setting} ${styles.iconbutton}`}><Edit /></button>
+        <button className={`${styles.trash} ${styles.iconbutton}`} onClick={() => dispatch(deleteElement(index))}><Trash/></button>
       </div>
       }
     </div>
