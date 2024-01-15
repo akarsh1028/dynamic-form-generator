@@ -1,0 +1,79 @@
+.elementsbar {
+  position: fixed;
+  right: 0;
+  width: 360px;
+  height: 100%;
+  background-color: #3e4652;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.header h3 {
+  text-transform: capitalize;
+}
+
+.closeIcon {
+  cursor: pointer;
+}
+
+.properties {
+  background-color: #37404a;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.properties li {
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid #333a43;
+}
+
+.properties label {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputselect {
+  border-radius: 5px;
+  border: 1px solid #2f333a;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  color: white;
+  background-color: #535f70;
+}
+
+.properties option {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+}
+
+.properties input:hover {
+  border-color: #596066;
+  box-shadow: 0 2px 8px rgba(86,70,50,.15);
+}
+
+.line {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.radiocheck {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
