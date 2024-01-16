@@ -13,10 +13,3 @@
 .header h1 {
   margin: 10px 0;
 }
-
-.mainContent {
-  display: flex;
-  background-color: #f3f3fe;
-  margin-top: 60px;
-  min-height: 90vh;
-}

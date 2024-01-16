@@ -48,14 +48,33 @@
   color: red;
 }
 
-.forminput input, textarea, select {
+.inputcomponent {
+  position: relative;
   border-radius: 5px;
   border: 2px solid lightgray;
   padding: 15px;
   font-size: 16px;
   outline: none;
+  color: gray;
 }
 
+.inputcomponent svg {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.inputoptions {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3345;
+  padding-left: 10px;
+}
+
+.areabox {
+  height: 100px;
+
+}
 .options {
   position: absolute;
   right: -50px;

@@ -24,14 +24,15 @@ const SelectInputs = ({ data, styles }) => {
       };
     }else if(type === 'Dropdown'){
       obj = {
-        label: "Select Dropdown",
+        label: "Type a question...",
+        placeholder: "Please Select",
         option: ["Option", "Option", "Option"],
         type: "dropdown",
         required: false,
       };
     }else if(type === 'Checkbox'){
       obj = {
-        label: "Checkbox",
+        label: "Type a question...",
         placeholder: "Enter Name",
         type: "checkbox",
         required: false,
@@ -39,7 +40,7 @@ const SelectInputs = ({ data, styles }) => {
       };
     }else if(type === 'Radio'){
       obj = {
-        label: "Radio button",
+        label: "Type a question...",
         placeholder: "Enter Name",
         type: "radio",
         required: false,

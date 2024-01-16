@@ -2,8 +2,9 @@ import React from 'react'
 import Button from './elements/Button'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
+import styles from '../components/styles/header.module.css'
 
-const Header = ({styles}) => {
+const Header = ({home}) => {
 
   const body = useSelector((state) => state.dynamicform.value)
 
@@ -19,7 +20,7 @@ const Header = ({styles}) => {
   return (
     <header className={styles.header}>
       <h1>Dynamic Form Generator</h1>
-      <Button label="Save" onclick={() => saveForm()}/>
+      {!home && <Button label="Save" onclick={() => saveForm()}/>}
     </header>
   )
 }

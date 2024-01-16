@@ -38,10 +38,13 @@ export const formSlice = createSlice({
     deleteOption: (state, action) => {
       state.value.inputs[action.payload.index].option.splice(action.payload.option, 1);
     },
+    setDynamicForm: (state, actions) => {
+      state.value = actions.payload;
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addElement, deleteElement, changeHeading, valueChange, addOption, deleteOption, optionChange } = formSlice.actions
+export const { addElement, deleteElement, changeHeading, valueChange, addOption, deleteOption, optionChange, setDynamicForm } = formSlice.actions
 
 export default formSlice.reducer

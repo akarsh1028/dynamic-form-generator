@@ -1,25 +1,18 @@
-import { useSelector } from 'react-redux';
-import styles from './App.module.css'
-import DynamicForm from './components/DynamicForm';
-import EditBar from './components/EditBar';
-import ElementsBar from './components/ElementsBar';
-import Header from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import ViewForm from './pages/ViewForm'
+import NewForm from './pages/NewForm';
+import Home from './pages/Home';
 
 function App() {
-
-  const editstate = useSelector((state) => state.editStatus.value.status)
-
   return (
-    <>
-      <Header styles={styles}/>
-      <main className={styles.mainContent}>
-        <ElementsBar/> 
-        <DynamicForm />
-        { editstate && <EditBar/> }
-      </main>
-    </>
-  );
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/newform" element={<NewForm />} />
+      <Route path='/:id' element={<ViewForm />} />
+    </Routes>
+  )
 }
+
 
 export default App;
 
