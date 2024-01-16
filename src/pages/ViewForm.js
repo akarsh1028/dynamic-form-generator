@@ -13,7 +13,7 @@ const ViewForm = () => {
   const [form, setForm] = useState(false);
 
   useEffect(() => {
-    const id = router.pathname.replace('/', '');
+    const id = router.pathname.replace('/form/', '');
 
     axios.get(`https://dynamic-form-v36q.onrender.com/form/${id}`)
       .then((res) => {
