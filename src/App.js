@@ -3,6 +3,7 @@ import styles from './App.module.css'
 import DynamicForm from './components/DynamicForm';
 import EditBar from './components/EditBar';
 import ElementsBar from './components/ElementsBar';
+import Header from './components/Header';
 
 function App() {
 
@@ -10,9 +11,7 @@ function App() {
 
   return (
     <>
-      <header className={styles.header}>
-        <h1>Dynamic Form Generator</h1>
-      </header>
+      <Header styles={styles}/>
       <main className={styles.mainContent}>
         <ElementsBar/> 
         <DynamicForm />

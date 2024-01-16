@@ -30,19 +30,3 @@
   padding-inline: 30px;
   padding-bottom: 30px;
 }
-
-.submitbtn {
-  padding-bottom: 30px;
-  display: flex;
-  justify-content: center;
-}
-
-.submitbtn button{
-  padding: 15px 30px;
-  border: none;
-  background-color: #007FFF;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 600;
-}

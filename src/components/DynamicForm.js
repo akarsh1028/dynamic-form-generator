@@ -20,7 +20,7 @@ const DynamicForm = () => {
             <FormInput key={`input-${index}`} data={item} styles={styles} index={index}/>
           ))}
         </div>
-        <Button/>
+        <Button label="Submit"/>
       </div>
     </section>
   )
