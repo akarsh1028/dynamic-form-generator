@@ -11,14 +11,38 @@
 }
 
 .heading {
-  font-size: 32px;
-  font-weight: 600;
   padding: 20px 30px;
   border-bottom: 1px solid lightgray;
+}
+
+.heading input {
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  padding: 15px;
+  font-size: 32px;
+  font-weight: 600;
+  outline: none;
+  width: 93%;
 }
 
 .formlist {
   margin-top: 20px;
   padding-inline: 30px;
   padding-bottom: 30px;
+}
+
+.submitbtn {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.submitbtn button{
+  padding: 15px 30px;
+  border: none;
+  background-color: #007FFF;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
 }

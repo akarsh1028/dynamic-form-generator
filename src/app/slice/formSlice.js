@@ -4,14 +4,13 @@ export const formSlice = createSlice({
   name: 'dynamicForm',
   initialState: {
     value: {
-      heading: "Form",
+      heading: "Form Title",
       inputs: [
         {
-          label: "Checkbox",
+          label: "Name",
           placeholder: "Enter Name",
-          type: "checkbox",
-          required: false,
-          option: ["Option", "Option", "Option"],
+          type: "text",
+          required: true,
         },
       ]
     },
@@ -24,8 +23,8 @@ export const formSlice = createSlice({
     deleteElement: (state, action) => {
       state.value.inputs.splice(action.payload,1);
     },
-    changeHeading: (state) => {
-      console.log(state.value.heading)
+    changeHeading: (state, actions) => {
+      state.value.heading = actions.payload
     },
     valueChange: (state, actions) => { 
       state.value.inputs[actions.payload.index][actions.payload.type] = actions.payload.value
