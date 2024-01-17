@@ -29,7 +29,7 @@ const Header = ({page}) => {
     <header className={styles.header}>
       <h1 onClick={() => route('/')}>Dynamic Form Generator</h1>
       {page === "newform" && <Button label="Save" onclick={() => saveForm()}/>}
-      {page === "view" && <Button label="Dashboard" onclick={() => route('/')}/>}
+      {page === "view" && <Button label="Dashboard" border='none' onclick={() => route('/')}/>}
     </header>
   )
 }
