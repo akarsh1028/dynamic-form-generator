@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './styles/editbar.module.css';
+import styles from './styles/properties.module.css';
 import { PlusCircleIcon, Trash, X } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleState } from '../app/slice/editStatus';
@@ -66,7 +66,7 @@ const Properties = () => {
             <label>Options <PlusCircleIcon color='white' onClick={() => dispatch(editForm.type === 'dropdown' ? addDropdownOption(editindex) : addOption(editindex))}/></label>
             {editForm.option.map((item, index) => (
               <div key={`item-${index}`} style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <input className={styles.inputselect} type='text' value={editForm.type === 'dropdown' ? item : item.label} onChange={(e) => optionHandler(index, e.target.value)} />
+                <input className={`${styles.inputselect} ${styles.optioninput}`} type='text' value={editForm.type === 'dropdown' ? item : item.label} onChange={(e) => optionHandler(index, e.target.value)} />
                 {editForm.option.length > 1 && <Trash cursor="pointer" color='white' onClick={() => dispatch(deleteOption({option: index, index: editindex}))}/>}
               </div>
             ))}

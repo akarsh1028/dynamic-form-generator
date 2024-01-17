@@ -1,7 +1,7 @@
 .elementsbar {
   position: fixed;
   right: 0;
-  width: 330px;
+  width: 90%;
   height: 100%;
   background-color: #3e4652;
 }
@@ -64,7 +64,7 @@
 
 .properties input:hover {
   border-color: #596066;
-  box-shadow: 0 2px 8px rgba(86,70,50,.15);
+  box-shadow: 0 2px 8px rgba(86, 70, 50, .15);
 }
 
 .line {
@@ -76,4 +76,18 @@
   width: 20px;
   height: 20px;
   margin: 0;
+}
+
+@media only screen and (min-width: 425px) {
+  .elementsbar {
+    width: 330px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+
+  .optioninput {
+    width: 80%;
+  }
+
 }

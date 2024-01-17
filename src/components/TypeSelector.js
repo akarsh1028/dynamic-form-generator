@@ -1,4 +1,4 @@
-import styles from './styles/elementbar.module.css'
+import styles from './styles/typeselector.module.css'
 import { ChevronDown, CircleDot, ListChecks, Pencil, Plus, SquarePen, X } from 'lucide-react';
 import SelectInputs from './elements/SelectInputs';
 import { useState } from 'react';
@@ -40,7 +40,7 @@ const TypeSelector = () => {
           </div>
           <div>
             {elemets.map((item) => (
-              <SelectInputs key={item.title} data={item} styles={styles} />
+              <SelectInputs key={item.title} data={item} styles={styles} setShowElements={setShowElements}/>
             ))}
           </div>
         </section>

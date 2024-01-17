@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addElement } from '../../app/slice/formSlice';
 
-const SelectInputs = ({ data, styles }) => {
+const SelectInputs = ({ data, styles, setShowElements }) => {
 
   const dispatch = useDispatch();
 
@@ -51,6 +51,7 @@ const SelectInputs = ({ data, styles }) => {
       };
     }
     dispatch(addElement(obj));
+    setShowElements(false)
   }
   return (
     <div className={styles.formElements} onClick={() => addFormElement(data.title)}>

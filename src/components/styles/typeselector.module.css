@@ -61,3 +61,19 @@
   margin: 0;
   text-align: center;
 }
+
+@media only screen and (max-width: 960px) {
+  .addElement {
+    border-radius: 50%;
+    padding: 10px;
+    bottom: 10px;
+    top: inherit;
+    left: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .addElement p{
+    display: none;
+  }
+}
