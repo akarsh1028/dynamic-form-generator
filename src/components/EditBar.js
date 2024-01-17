@@ -50,7 +50,7 @@ const EditBar = () => {
           </li>
         }
         <li className={styles.line}>
-          <input className={`${styles.inputselect} ${styles.radiocheck}`} id='required' type='checkbox' value={editForm.required} onChange={() => labelHandler('required', !editForm.required)} />
+          <input className={`${styles.inputselect} ${styles.radiocheck}`} id='required' type='checkbox' checked={editForm.required} onChange={() => labelHandler('required', !editForm.required)} />
           <label htmlFor='required'>Required</label>
         </li>
         {editForm.type === 'number' && <>

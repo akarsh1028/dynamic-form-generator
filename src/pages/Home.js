@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <>
-      <Header home={true}/>
+      <Header page="home"/>
       <Dashboard/>
     </>
   )

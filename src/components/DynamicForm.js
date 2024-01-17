@@ -18,7 +18,7 @@ const DynamicForm = () => {
         </div>
         <div className={styles.formlist}>
           {form.inputs.map((item, index) => (
-            <FormInput key={`input-${index}`} data={item} styles={styles} index={index}/>
+            <FormInput key={`input-${index}`} data={item} index={index}/>
           ))}
         </div>
         <Button label="Submit"/>

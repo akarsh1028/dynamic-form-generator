@@ -1,4 +1,3 @@
-
 .forminput {
   position: relative;
   display: flex;
@@ -48,6 +47,16 @@
   color: red;
 }
 
+.forminput input,
+select {
+  position: relative;
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  padding: 15px;
+  font-size: 16px;
+  outline: none;
+}
+
 .inputcomponent {
   position: relative;
   border-radius: 5px;
@@ -75,6 +84,7 @@
   height: 100px;
 
 }
+
 .options {
   position: absolute;
   right: -50px;

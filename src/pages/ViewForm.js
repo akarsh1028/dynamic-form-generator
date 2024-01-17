@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setDynamicForm } from '../app/slice/formSlice';
 import EditForm from '../components/EditForm';
+import Header from '../components/Header';
 
 const ViewForm = () => {
 
@@ -33,6 +34,7 @@ const ViewForm = () => {
 
   return (
     <main className={styles.main}>
+      <Header page="view"/>
       {form ?
         <EditForm />
         :

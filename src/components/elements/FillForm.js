@@ -37,7 +37,7 @@ const FormFill = ({ data, index }) => {
                 ))}
               </div>
               :
-              <input id={`input-${index}`} max={data.max} min={data.min} type={data.type} placeholder={data.placeholder} />
+              <input id={`input-${index}`} value={data.value}  max={data.max} min={data.min} type={data.type} placeholder={data.placeholder} />
       }
     </div>
   )

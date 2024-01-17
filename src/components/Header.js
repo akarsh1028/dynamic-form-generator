@@ -3,15 +3,20 @@ import Button from './elements/Button'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import styles from '../components/styles/header.module.css'
+import { useNavigate } from 'react-router-dom'
 
-const Header = ({home}) => {
+const Header = ({page}) => {
 
   const body = useSelector((state) => state.dynamicform.value)
+  const route = useNavigate();
 
   const saveForm = () => {
     axios.post("https://dynamic-form-v36q.onrender.com/form",{body})
     .then((res) => {
       console.log(res)
+      if(res.data._id){
+        route(`/form/${res.data._id}`)
+      }
     })
     .catch((err) => {
       console.log(err);
@@ -20,7 +25,8 @@ const Header = ({home}) => {
   return (
     <header className={styles.header}>
       <h1>Dynamic Form Generator</h1>
-      {!home && <Button label="Save" onclick={() => saveForm()}/>}
+      {page === "newform" && <Button label="Save" onclick={() => saveForm()}/>}
+      {page === "view" && <Button label="Dashboard" onclick={() => route('/')}/>}
     </header>
   )
 }

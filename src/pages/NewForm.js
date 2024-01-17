@@ -11,7 +11,7 @@ const NewForm = () => {
 
   return (
     <>
-      <Header/>
+      <Header page="newform"/>
       <main className={styles.mainContent}>
         <ElementsBar />
         <DynamicForm />

@@ -1,20 +1,19 @@
 import styles from './styles/dynamicform.module.css';
-import FormInput from './elements/FormInput';
+import FillForm from './elements/FillForm';
 import { useSelector } from 'react-redux';
 import Button from './elements/Button';
 
 const EditForm = () => {
 
   const form = useSelector((state) => state.dynamicform.value)
-  console.log(form)
 
   return (
-    <section className={styles.dynamicform}>
+    <section className={`${styles.dynamicform} ${styles.viewform}`}>
       <div className={styles.container}>
-        <div className={styles.heading}>{form.heading}</div>
+        <div className={styles.formheading}>{form.heading}</div>
         <div className={styles.formlist}>
           {form.inputs.map((item, index) => (
-            <FormInput key={`input-${index}`} data={item} styles={styles} index={index}/>
+            <FillForm key={`input-${index}`} data={item} index={index}/>
           ))}
         </div>
         <Button label="Submit"/>
