@@ -48,7 +48,7 @@
 }
 
 .forminput input,
-select {
+select, textarea {
   position: relative;
   border-radius: 5px;
   border: 2px solid lightgray;

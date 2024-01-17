@@ -15,10 +15,16 @@ export const editSlice = createSlice({
     },
     updateIndex: (state, actions) => {
       state.value.index = actions.payload
+    },
+    reset: (state) => {
+      state.value = {
+        status: false,
+        index: 0
+      }
     }
   },
 })
 
-export const { toggleState, updateIndex } = editSlice.actions
+export const { toggleState, updateIndex, reset } = editSlice.actions
 
 export default editSlice.reducer

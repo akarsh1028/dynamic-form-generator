@@ -8,7 +8,7 @@ const FormFill = ({ data, index }) => {
         {data.label ? data.label : <div style={{ color: "gray" }}>Add Label</div>}
       </label>
       {data.type === 'textarea' ?
-        <textarea rows="5" readOnly id={`input-${index}`} placeholder={data.placeholder}></textarea>
+        <textarea rows="5" id={`input-${index}`} placeholder={data.placeholder}></textarea>
         :
         data.type === 'dropdown' ?
           <select id={`input-${index}`}>
@@ -21,7 +21,7 @@ const FormFill = ({ data, index }) => {
             <div className={styles.optionbox}>
               {data.option.map((item, i) => (
                 <div key={`check${index}-${i}`} className={styles.checkradio}>
-                  <input readOnly id={`${data.type + i}-${index}`} type={data.type} />
+                  <input id={`${data.type + i}-${index}`} type={data.type} />
                   <label htmlFor={`${data.type + i}-${index}`}>{item ? item.label : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
                 </div>
               ))}
@@ -31,7 +31,7 @@ const FormFill = ({ data, index }) => {
               <div className={styles.optionbox}>
                 {data.option.map((item, i) => (
                   <div key={`radio${index}-${i}`} className={styles.checkradio}>
-                    <input name={`${data.label}-${index}`} readOnly id={`${data.type + i}-${index}`} type={data.type} />
+                    <input name={`${data.label}-${index}`} id={`${data.type + i}-${index}`} type={data.type} />
                     <label htmlFor={`${data.type + i}-${index}`}>{item ? item.label : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
                   </div>
                 ))}

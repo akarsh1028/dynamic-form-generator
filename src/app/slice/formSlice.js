@@ -11,6 +11,7 @@ export const formSlice = createSlice({
           placeholder: "Enter Name",
           type: "text",
           required: true,
+          value: ''
         },
       ]
     },
@@ -29,11 +30,17 @@ export const formSlice = createSlice({
     valueChange: (state, actions) => { 
       state.value.inputs[actions.payload.index][actions.payload.type] = actions.payload.value
     },
+    optionDropdownChange: (state, actions) => { 
+      state.value.inputs[actions.payload.index].option[actions.payload.option] = actions.payload.value
+    },
     optionChange: (state, actions) => { 
       state.value.inputs[actions.payload.index].option[actions.payload.option].label = actions.payload.value
     },
+    addDropdownOption: (state, actions) => {
+      state.value.inputs[actions.payload].option.push('Option')
+    },
     addOption: (state, actions) => {
-      state.value.inputs[actions.payload].option.push(`Option`)
+      state.value.inputs[actions.payload].option.push({label: 'Option', isChecked: false})
     },
     deleteOption: (state, action) => {
       state.value.inputs[action.payload.index].option.splice(action.payload.option, 1);
@@ -55,6 +62,6 @@ export const formSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addElement, deleteElement, changeHeading, valueChange, addOption, deleteOption, optionChange, setDefault } = formSlice.actions
+export const { addElement, deleteElement, changeHeading, valueChange, addOption, deleteOption, optionChange, setDefault, addDropdownOption, optionDropdownChange } = formSlice.actions
 
 export default formSlice.reducer

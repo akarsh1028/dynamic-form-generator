@@ -8,7 +8,6 @@ const DynamicForm = () => {
 
   const form = useSelector((state) => state.dynamicform.value)
   const dispatch = useDispatch();
-  console.log(form)
 
   return (
     <section className={styles.dynamicform}>

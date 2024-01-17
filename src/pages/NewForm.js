@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import Header from '../components/Header';
-import ElementsBar from '../components/ElementsBar';
+import TypeSelector from '../components/TypeSelector';
 import DynamicForm from '../components/DynamicForm';
-import EditBar from '../components/EditBar';
+import Properties from '../components/Properties';
 import styles from './NewForm.module.css';
 
 const NewForm = () => {
@@ -13,9 +13,9 @@ const NewForm = () => {
     <>
       <Header page="newform"/>
       <main className={styles.mainContent}>
-        <ElementsBar />
+        <TypeSelector />
         <DynamicForm />
-        {editstate && <EditBar />}
+        {editstate && <Properties />}
       </main>
     </>
   );

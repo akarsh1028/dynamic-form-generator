@@ -3,7 +3,7 @@ import { ChevronDown, CircleDot, ListChecks, Pencil, Plus, SquarePen, X } from '
 import SelectInputs from './elements/SelectInputs';
 import { useState } from 'react';
 
-const ElementsBar = () => {
+const TypeSelector = () => {
 
   const [showElements, setShowElements] = useState(false);
 
@@ -51,4 +51,4 @@ const ElementsBar = () => {
   )
 }
 
-export default ElementsBar
+export default TypeSelector

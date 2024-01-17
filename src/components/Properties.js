@@ -3,22 +3,20 @@ import styles from './styles/editbar.module.css';
 import { PlusCircleIcon, Trash, X } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleState } from '../app/slice/editStatus';
-import { addOption, deleteOption, optionChange, valueChange } from '../app/slice/formSlice';
+import { addDropdownOption, addOption, deleteOption, optionChange, optionDropdownChange, valueChange } from '../app/slice/formSlice';
 
-const EditBar = () => {
+const Properties = () => {
 
   const editindex = useSelector((state) => state.editStatus.value.index)
   const editForm = useSelector((state) => state.dynamicform.value.inputs[editindex])
   const dispatch = useDispatch();
-
-  console.log(editForm)
 
   const labelHandler = (type, value) => {
     dispatch(valueChange({ index: editindex, type: type, value: value }));
   }
 
   const optionHandler = (option, value) => {
-    dispatch(optionChange({ index: editindex, option: option, value: value }));
+    editForm.type === 'dropdown' ? dispatch(optionDropdownChange({ index: editindex, option: option, value: value })) : dispatch(optionChange({ index: editindex, option: option, value: value }));
   }
 
   return (
@@ -65,10 +63,10 @@ const EditBar = () => {
         </>}
         {(editForm.type === 'checkbox' || editForm.type === 'radio' || editForm.type === 'dropdown') &&
           <li>
-            <label>Options <PlusCircleIcon color='white' onClick={() => dispatch(addOption(editindex))}/></label>
+            <label>Options <PlusCircleIcon color='white' onClick={() => dispatch(editForm.type === 'dropdown' ? addDropdownOption(editindex) : addOption(editindex))}/></label>
             {editForm.option.map((item, index) => (
               <div key={`item-${index}`} style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <input className={styles.inputselect} type='text' value={item.label} onChange={(e) => optionHandler(index, e.target.value)} />
+                <input className={styles.inputselect} type='text' value={editForm.type === 'dropdown' ? item : item.label} onChange={(e) => optionHandler(index, e.target.value)} />
                 {editForm.option.length > 1 && <Trash cursor="pointer" color='white' onClick={() => dispatch(deleteOption({option: index, index: editindex}))}/>}
               </div>
             ))}
@@ -79,4 +77,4 @@ const EditBar = () => {
   )
 }
 
-export default EditBar
+export default Properties

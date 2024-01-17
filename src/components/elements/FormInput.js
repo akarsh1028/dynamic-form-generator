@@ -3,7 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from '../styles/forminput.module.css'
 import { deleteElement } from '../../app/slice/formSlice'
-import { toggleState, updateIndex } from '../../app/slice/editStatus'
+import { reset, toggleState, updateIndex } from '../../app/slice/editStatus'
 
 const FormInput = ({ data, index }) => {
 
@@ -43,7 +43,7 @@ const FormInput = ({ data, index }) => {
 
       {index === editindex && <div className={styles.options}>
         <button className={`${styles.setting} ${styles.iconbutton}`} onClick={() => dispatch(toggleState(index))}><Edit /></button>
-        <button className={`${styles.trash} ${styles.iconbutton}`} onClick={() => dispatch(deleteElement(index))}><Trash /></button>
+        <button className={`${styles.trash} ${styles.iconbutton}`} onClick={() => {dispatch(deleteElement(index)); dispatch(reset())}}><Trash /></button>
       </div>
       }
     </div>
