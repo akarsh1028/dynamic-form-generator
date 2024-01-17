@@ -28,7 +28,7 @@ const SelectInputs = ({ data, styles, setShowElements }) => {
       obj = {
         label: "Type a question...",
         placeholder: "Please Select",
-        option: ["Option", "Option", "Option"],
+        option: ["Option1", "Option2", "Option3"],
         type: "dropdown",
         required: false,
         value: ""
@@ -39,7 +39,7 @@ const SelectInputs = ({ data, styles, setShowElements }) => {
         placeholder: "Enter Name",
         type: "checkbox",
         required: false,
-        option: [{label: "Option", isChecked: false}, {label: "Option", isChecked: false}, {label: "Option", isChecked: false}],
+        option: [{label: "Option1", isChecked: false}, {label: "Option2", isChecked: false}, {label: "Option3", isChecked: false}],
       };
     }else if(type === 'Radio'){
       obj = {
@@ -47,7 +47,7 @@ const SelectInputs = ({ data, styles, setShowElements }) => {
         placeholder: "Enter Name",
         type: "radio",
         required: false,
-        option: [{label: "Option", isChecked: false}, {label: "Option", isChecked: false}, {label: "Option", isChecked: false}],
+        option: [{label: "Option1", isChecked: false}, {label: "Option2", isChecked: false}, {label: "Option3", isChecked: false}],
       };
     }
     dispatch(addElement(obj));
