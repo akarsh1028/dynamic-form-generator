@@ -24,7 +24,7 @@ const FormInput = ({ data, index }) => {
           {data.option.map((item, i) => (
             <div key={`check${index}-${i}`} className={styles.checkradio}>
               <input disabled type={data.type} />
-              <label>{item ? item : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
+              <label>{item ? item.label : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
             </div>
           ))}
         </div>

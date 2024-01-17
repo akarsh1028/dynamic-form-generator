@@ -5,7 +5,7 @@ import Button from './elements/Button';
 
 const EditForm = () => {
 
-  const form = useSelector((state) => state.dynamicform.value)
+  const form = useSelector((state) => state.viewforms.value)
 
   return (
     <section className={`${styles.dynamicform} ${styles.viewform}`}>

@@ -3,9 +3,9 @@ import styles from './viewform.module.css';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { setDynamicForm } from '../app/slice/formSlice';
 import EditForm from '../components/EditForm';
 import Header from '../components/Header';
+import { setDynamicForm } from '../app/slice/viewformSlice';
 
 const ViewForm = () => {
 

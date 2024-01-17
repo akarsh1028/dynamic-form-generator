@@ -68,7 +68,7 @@ const EditBar = () => {
             <label>Options <PlusCircleIcon color='white' onClick={() => dispatch(addOption(editindex))}/></label>
             {editForm.option.map((item, index) => (
               <div key={`item-${index}`} style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                <input className={styles.inputselect} type='text' value={item} onChange={(e) => optionHandler(index, e.target.value)} />
+                <input className={styles.inputselect} type='text' value={item.label} onChange={(e) => optionHandler(index, e.target.value)} />
                 {editForm.option.length > 1 && <Trash cursor="pointer" color='white' onClick={() => dispatch(deleteOption({option: index, index: editindex}))}/>}
               </div>
             ))}

@@ -14,6 +14,7 @@ const SelectInputs = ({ data, styles }) => {
         placeholder: "Enter Name",
         type: "text",
         required: false,
+        value: "",
       };
     }else if(type === 'Text Area'){
       obj = {
@@ -21,6 +22,7 @@ const SelectInputs = ({ data, styles }) => {
         placeholder: "Area Box...",
         type: "textarea",
         required: false,
+        value: "",
       };
     }else if(type === 'Dropdown'){
       obj = {
@@ -29,6 +31,7 @@ const SelectInputs = ({ data, styles }) => {
         option: ["Option", "Option", "Option"],
         type: "dropdown",
         required: false,
+        value: ""
       };
     }else if(type === 'Checkbox'){
       obj = {
@@ -36,7 +39,7 @@ const SelectInputs = ({ data, styles }) => {
         placeholder: "Enter Name",
         type: "checkbox",
         required: false,
-        option: ["Option", "Option", "Option"],
+        option: [{label: "Option", isChecked: false}, {label: "Option", isChecked: false}, {label: "Option", isChecked: false}],
       };
     }else if(type === 'Radio'){
       obj = {
@@ -44,7 +47,7 @@ const SelectInputs = ({ data, styles }) => {
         placeholder: "Enter Name",
         type: "radio",
         required: false,
-        option: ["Option", "Option", "Option"],
+        option: [{label: "Option", isChecked: false}, {label: "Option", isChecked: false}, {label: "Option", isChecked: false}],
       };
     }
     dispatch(addElement(obj));

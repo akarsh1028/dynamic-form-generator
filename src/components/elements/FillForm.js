@@ -22,7 +22,7 @@ const FormFill = ({ data, index }) => {
               {data.option.map((item, i) => (
                 <div key={`check${index}-${i}`} className={styles.checkradio}>
                   <input readOnly id={`${data.type + i}-${index}`} type={data.type} />
-                  <label htmlFor={`${data.type + i}-${index}`}>{item ? item : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
+                  <label htmlFor={`${data.type + i}-${index}`}>{item ? item.label : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
                 </div>
               ))}
             </div>
@@ -32,7 +32,7 @@ const FormFill = ({ data, index }) => {
                 {data.option.map((item, i) => (
                   <div key={`radio${index}-${i}`} className={styles.checkradio}>
                     <input name={`${data.label}-${index}`} readOnly id={`${data.type + i}-${index}`} type={data.type} />
-                    <label htmlFor={`${data.type + i}-${index}`}>{item ? item : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
+                    <label htmlFor={`${data.type + i}-${index}`}>{item ? item.label : <div style={{ color: "gray" }}>Add Option Title</div>}</label>
                   </div>
                 ))}
               </div>
