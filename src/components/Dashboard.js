@@ -10,13 +10,13 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios.get("https://dynamic-form-v36q.onrender.com/form")
-    .then((res) => {
-      setFormList(res.data);
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  },[])
+      .then((res) => {
+        setFormList(res.data);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [])
 
   const route = useNavigate();
   return (
@@ -25,12 +25,17 @@ const Dashboard = () => {
         <Plus />
         Create New Form
       </div>
-      {formList.length > 0 && formList.map((item) => (
-        <div key={item._id} className={styles.box} onClick={() => route(`/form/${item._id}`)}>
-          <File />
-          {item.body.heading}
-        </div>
-      ))}
+      {formList.length > 0 ?
+        <>
+          {formList.map((item) => (
+            <div key={item._id} className={styles.box} onClick={() => route(`/form/${item._id}`)}>
+              <File />
+              {item.body.heading}
+            </div>
+          ))}
+        </> :
+        <div className={styles.loading}>Loading...</div>
+      }
     </section>
   )
 }
