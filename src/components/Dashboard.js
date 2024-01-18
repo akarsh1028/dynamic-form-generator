@@ -34,7 +34,7 @@ const Dashboard = () => {
             </div>
           ))}
         </> :
-        <div className={styles.loading}>Loading...</div>
+        null
       }
     </section>
   )
