@@ -1,7 +1,7 @@
 import styles from '../styles/forminput.module.css'
 
 const FormFill = ({ data, index, values, setValues }) => {
-console.log(values)
+  
   const onChangeHandler = (value, item) => {
     let obj = values;
     if(data.type === "checkbox"){

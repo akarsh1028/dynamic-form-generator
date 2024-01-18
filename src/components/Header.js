@@ -13,9 +13,8 @@ const Header = ({page}) => {
   const dispatch = useDispatch();
 
   const saveForm = () => {
-    axios.post("https://dynamic-form-v36q.onrender.com/form",{body})
+    axios.post("https://dynamic-form-v36q.onrender.com/newform",{body})
     .then((res) => {
-      console.log(res)
       if(res.data._id){
         dispatch(setDefault());
         route(`/form/${res.data._id}`)
