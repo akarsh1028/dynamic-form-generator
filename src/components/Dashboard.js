@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [formList, setFormList] = useState([]);
 
   useEffect(() => {
-    axios.get("https://dynamic-form-v36q.onrender.com/form")
+    axios.get("https://dynamic-form-backend.vercel.app/form")
       .then((res) => {
         setFormList(res.data);
       })

@@ -20,7 +20,7 @@ const ViewForm = () => {
   useEffect(() => {
     const id = router.pathname.replace('/form/', '');
 
-    axios.get(`https://dynamic-form-v36q.onrender.com/form/${id}`)
+    axios.get(`https://dynamic-form-backend.vercel.app/form/${id}`)
       .then((res) => {
         if (res.data.status) {
           if (res.data.body === null) {

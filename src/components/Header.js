@@ -13,7 +13,7 @@ const Header = ({page}) => {
   const dispatch = useDispatch();
 
   const saveForm = () => {
-    axios.post("https://dynamic-form-v36q.onrender.com/newform",{body})
+    axios.post("https://dynamic-form-backend.vercel.app/newform",{body})
     .then((res) => {
       if(res.data._id){
         dispatch(setDefault());
